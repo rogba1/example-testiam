@@ -2,7 +2,7 @@
 # Description: A script to call the AWS CLI to create a new iam user.
 # This script requires the latest version of the AWS CLI and should be run on a unix environment.
 # You'll also need to make the script executable using the following command
-# `chmod +x ./setup_new_iam_user.sh`
+# `chmod +x ./setup-new-iam-user.sh`
 #
 # Usage:
 # Run from command line with the following parameters (maintaining this sequence).
@@ -26,9 +26,7 @@ case $key in
         echo "Description"
         echo ""
         echo "Usage:"
-        echo "  setFup-new-iam-user.sh [options]"
-        echo "Options: "
-        echo "-h, --help          show help page"
+        echo "  setup-new-iam-user.sh"
         echo "--profile :         The aws named profile that indicates the account set up under"
         echo "--user_name :       The aws new user account name"
         exit 0
@@ -42,6 +40,6 @@ done
 
 
 
-# AWS CLI command - create account using email and account friendly name passed in
+# AWS CLI command - create account using name passed in
 aws iam create-user --user-name $user_name
 aws iam put-user-policy --user-name $user_name --policy-name MyUserPolicy --policy-document file://user-policy.json
