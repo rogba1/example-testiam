@@ -6,7 +6,7 @@
 #
 # Usage:
 # Run from command line with the following parameters (maintaining this sequence).
-#  ./setu-new-iam-user.sh --user_name <user_name> --profile <profile_name>
+#  ./setup-new-iam-user.sh --user_name <user_name> --profile <profile_name>
 #  e.g
 #  ./setup-new-iam-user.sh  --user_name joeblogg --profile default
 #
@@ -29,7 +29,8 @@ case $key in
         echo "  setFup-new-iam-user.sh [options]"
         echo "Options: "
         echo "-h, --help          show help page"
-        echo "--profile :         The aws named profile that indicates the account that the alarm will be set up under"
+        echo "--profile :         The aws named profile that indicates the account set up under"
+        echo "--user_name :       The aws new user account name"
         exit 0
         ;;
     --user_name) user_name="$2"; shift ;;
